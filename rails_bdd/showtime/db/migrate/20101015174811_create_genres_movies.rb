@@ -6,5 +6,16 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/achbd for more book information.
 #---
-module ApplicationHelper
+class CreateGenresMovies < ActiveRecord::Migration
+  def self.up
+    create_table :genres_movies, :id => false do |t|
+      t.integer :genre_id
+      t.integer :movie_id
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :genres_movies
+  end
 end

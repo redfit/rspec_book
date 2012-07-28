@@ -6,5 +6,17 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/achbd for more book information.
 #---
-module ApplicationHelper
+class MoviesController < ApplicationController
+  def index
+  end
+
+  def new
+    @movie = Movie.new
+    @genres = Genre.all
+  end
+
+  def create
+    Movie.create!(params[:movie].merge(:genres => Genre.find(params[:genres])))
+    redirect_to movies_path
+  end
 end

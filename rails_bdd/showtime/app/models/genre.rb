@@ -6,5 +6,6 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/achbd for more book information.
 #---
-module ApplicationHelper
+class Genre < ActiveRecord::Base
+  has_and_belongs_to_many :movies
 end

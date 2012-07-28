@@ -6,5 +6,12 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/achbd for more book information.
 #---
-module ApplicationHelper
+class GenresController < ApplicationController
+  def index
+    @genres = Genre.all
+  end
+
+  def show
+    @genre = Genre.find(params[:id])
+  end
 end

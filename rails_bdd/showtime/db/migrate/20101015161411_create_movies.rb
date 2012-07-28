@@ -6,5 +6,17 @@
 # We make no guarantees that this code is fit for any purpose. 
 # Visit http://www.pragmaticprogrammer.com/titles/achbd for more book information.
 #---
-module ApplicationHelper
+class CreateMovies < ActiveRecord::Migration
+  def self.up
+    create_table :movies do |t|
+      t.date :showtime_date
+      t.time :showtime_time
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :movies
+  end
 end
