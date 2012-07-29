@@ -1,3 +1,4 @@
+@javascript
 Feature: Create movie
 
   So that customers can browse movies by genre
